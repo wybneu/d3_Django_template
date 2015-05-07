@@ -1,0 +1,22 @@
+
+<script type="text/javascript">
+	//d3.select("body").append("p").text("The average speed is {{ average }}"); 
+	
+	//var dataset = [ 5, 10, 15, 20, 25,111,212 ];
+
+	// by this way, to use template to import the dataset for D3
+	var dataset = {{ numbers }};
+	//var dataset=[];
+	//for (var i = 0; i < 25; i++) {           
+    //	var newNumber = Math.random() * 150;  
+    //	dataset.push(newNumber);             
+	//}
+	
+//	d3.select("body").selectAll("p").data(dataset).enter().append("p").text(function(d) { return d; }).style("color", "red");
+//	d3.select("body").selectAll("p").data(dataset).enter().append("p").text(function(d) { return d; }).style("color", function(d) { if (d > 15) { return "red"; } else {  return "black"; }});
+	
+	d3.select("#graph").data(dataset).enter().append("div").attr("class", "bar").style("height", function(d) {return d + "px";});
+
+	
+	
+</script>
